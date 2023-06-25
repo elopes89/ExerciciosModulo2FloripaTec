@@ -1,0 +1,23 @@
+<h1>Exercício 4</h1>
+<form (ngSubmit)="Enviar()">
+
+	<input [(ngModel)]="nome"
+		name="nome"
+		placeholder="nome"
+		required>
+	<br>
+	<input [(ngModel)]="email"
+		name="email"
+		placeholder="email"
+		required>
+	<br>
+	<br>
+	<div *ngIf="email !== '' && troca">
+		<p>O filme escolhido: {{email}}	</p>
+	</div>
+	<div *ngIf="email == '' && troca">
+		<p>	O email é obrigatório!!	</p>
+	</div>
+	<input type="submit">
+	<button (click)="Limpar()">Limpar</button>
+</form>

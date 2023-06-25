@@ -1,0 +1,35 @@
+<div style="display: flex;">
+	<div style="max-width: 400px; margin: 0;">
+		<h2>Salvar Notificação</h2>
+		<div class="form-group">
+			<input [(ngModel)]="notifObj.titulo"
+				name="titulo"
+				class="form-control"
+				placeholder="título">
+		</div>
+		<br>
+		<div class="form-group">
+			<input [(ngModel)]="notifObj.subTitulo"
+				name="subTitulo"
+				class="form-control"
+				placeholder="descrição">
+
+		</div>
+		<button (click)="addNot()"	class="btn btn-primary">Enviar</button>
+  </div>
+	<div class="container">
+		<app-header></app-header>
+    <div *ngIf="notificacoes.length == 0">
+			<span>Lista Vazia</span>
+		</div>
+
+		<div *ngFor="let d of notificacoes index as i">
+			<ul class="list-group"  (click)="Conferir(i)">
+        <li class="list-group-item" [ngClass]="{visto: d.lido === true}">{{d.titulo}}</li>
+				<li class="list-group-item" [ngClass]="{visto: d.lido === true}">{{d.subTitulo}}</li>
+        <li class="list-group-item" [ngClass]="{visto: d.lido === true}">{{d.data}}</li>
+        <li class="list-group-item" [ngClass]="{visto: d.lido === true}"> <button (click)="removeNot(i)" class="btn btn-primary">Excluir</button> </li>
+      </ul>
+		</div>
+	</div>
+</div>

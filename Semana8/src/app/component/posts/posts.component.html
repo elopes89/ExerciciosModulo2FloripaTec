@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			<form [formGroup]="registerForm"
+				(ngSubmit)="OnSubmit()">
+				<div class="form-group">
+					<label for="titulo">Título</label>
+					<input [(ngModel)]="ttt" [ngClass]="{'is-invalid': submitted && registerForm.controls?.['titulo']?.errors}"
+						formControlName='titulo' name="ttt"
+						class="form-control">
+					<div *ngIf="submitted && registerForm.controls?.['titulo']?.errors"
+						class="text-danger">
+						<div *ngIf=" registerForm.controls?.['titulo']?.errors?.['minlength']">Nome deve ser maior</div>
+						<div *ngIf=" registerForm.controls?.['titulo']?.errors?.['required']">
+							Título Obrigatório!!</div>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>Subtítulo</label>
+					<input [ngClass]="{'is-invalid': submitted && registerForm.controls?.['subTitulo']?.errors}"
+						type="text"
+						formControlName="subTitulo"
+						class="form-control">
+					<div *ngIf="submitted && registerForm.controls?.['subTitulo']?.errors"
+						class="text-danger">
+						<div *ngIf="registerForm.controls?.['subTitulo']?.errors?.['required']">Descrição!!</div>
+					</div>
+				</div>
+				<button class="btn btn-primary" (click)="addNot()">Enviar</button>
+				<br>
+				<br>
+			</form>
+		</div>
+	</div>
+</div>

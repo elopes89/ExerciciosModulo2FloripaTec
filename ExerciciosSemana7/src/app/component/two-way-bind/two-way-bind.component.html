@@ -1,0 +1,21 @@
+<h1>Exercício 2</h1>
+<input type="text" [(ngModel)]="userName" name="nome" placeholder="Digite um nome">
+
+<div *ngIf="userName.length > 0" >
+    <p>Texto digitado acima: {{userName}}</p>
+</div>
+
+<h1> Exercício 3</h1>
+<input type="number" [(ngModel)]="fator1" placeholder="primeiro número"> <br>
+<input type="number" [(ngModel)]="fator2" placeholder="segundo número"> <br> <br>
+
+<button (click)="Somar()">Somar</button> 
+<button (click)="Subtrair()">Subtrair</button> 
+<button (click)="Multiplicar()">Multiplicar</button> 
+<button (click)="Dividir()">Dividir</button> <br> <br>
+
+<span>Resultado:{{resultado}}</span> <br> <br>
+
+<button (click)="Limpar()">Limpar</button>
+
+

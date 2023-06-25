@@ -1,0 +1,14 @@
+<button (click)="Mais()">+</button>
+<p>{{this.resultado}}</p>
+<button (click)="Menos()">-</button>
+
+<h1>PIX</h1>
+
+<label > valor</label>
+<input  type="number" [(ngModel)]="result" name="result">
+
+<button (mouseover)=" (result = result + 5) ">result</button>
+<button (mousedown)="(result = result + 10) ">+ 10</button>
+<button (mousemove)="(result = result + 50) " >+50</button>
+<button (mouseleave)="(result = result + 100) ">+ 100</button>
+<button (mousedown)="(result = result + 500) ">+ 500</button>

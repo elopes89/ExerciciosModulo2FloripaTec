@@ -1,0 +1,65 @@
+<h1>Exercício 5</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-md-6 offset-md-3">
+			<form #formDir="ngForm"
+				[formGroup]="registerForm"
+				(ngSubmit)="OnSubmit()">
+				<div class="form-group">
+					<label>Nome</label>
+					<input type="text"
+						formControlName='nome'
+						required>
+					<div *ngIf="nome.invalid && formDir.submitted">
+						<p *ngIf="nome.errors?.['required']">
+							Obrigatório o Nome!!
+						</p>
+						<p *ngIf="nome.errors?.['minlength']">
+							Nome tem que ser maior que 3!!
+						</p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>E-mail</label>
+					<input type="text"
+						formControlName="email"
+						required>
+					<div *ngIf="formDir.submitted && email.invalid">
+						<p *ngIf=" email.errors?.['required']">
+							O Email é obrigatório!!
+						</p>
+						<p *ngIf=" email.errors?.['email']">
+							O Email  incorreto!!
+						</p>
+					</div>
+				</div>
+				<div class="form-group">
+					<label>Nome do Filme</label>
+					<input type="text"
+						formControlName="nomeFilme">
+					<div *ngIf="nomeFilme.invalid &&  formDir.submitted">
+						<p *ngIf="nomeFilme.errors?.['required']">Nome requirido!!!</p>
+						<p *ngIf="nomeFilme.errors?.['minlength']">Nome deve ser maior!!!</p>
+					</div>
+				</div>
+
+				<div class="form-group">
+					<label>Nota</label>
+					<input type="number"
+						formControlName="avaliacao"
+						required>
+					<div *ngIf=" formDir.submitted && avaliacao.errors?.['required']">
+
+						<p *ngIf="avaliacao.errors?.['required']">
+							Número
+                        Inválido!!!
+						</p>
+					</div>
+				</div>
+				<button class="btn btn-primary">Enviar</button>
+				<p *ngIf="nomeFilme">{{filmeFavorito}}</p>
+			</form>
+		</div>
+	</div>
+</div>

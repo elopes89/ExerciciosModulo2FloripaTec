@@ -1,0 +1,444 @@
+{
+	"info": {
+		"_postman_id": "621c74ee-6e7c-42ab-be8f-0be5019697f6",
+		"name": "Senai Angular",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16364311"
+	},
+	"item": [
+		{
+			"name": "alunos/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/alunos/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"alunos",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeAluno\": \"Bruno da Silva\",\r\n    \"emailAluno\": \"bsilva@email.com\",\r\n    \"cursoAluno\": \"historia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/alunos/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"alunos",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"message\": \"Aluno registrado com sucesso\",\r\n    \"success\": true\r\n}"
+				}
+			]
+		},
+		{
+			"name": "alunos/get-all",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/alunos/get-all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"alunos",
+								"get-all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"nomeAluno\": \"Bruno da Silva\",\r\n        \"emailAluno\": \"bsilva@email.com\",\r\n        \"cursoAluno\": \"historia\"\r\n    },\r\n    {\r\n        \"nomeAluno\": \"Gislaine de Amaral\",\r\n        \"emailAluno\": \"gamaral@email.com\",\r\n        \"cursoAluno\": \"filosofia\"\r\n    },\r\n    {\r\n        \"nomeAluno\": \"Valdir Neto\",\r\n        \"emailAluno\": \"vneto@email.com\",\r\n        \"cursoAluno\": \"sociologia\"\r\n    },\r\n    {\r\n        \"nomeAluno\": \"Tamires Vinck\",\r\n        \"emailAluno\": \"tvinck@email.com\",\r\n        \"cursoAluno\": \"filosofia\"\r\n    },\r\n    {\r\n        \"nomeAluno\": \"Emerson Jose\",\r\n        \"emailAluno\": \"ejose@email.com\",\r\n        \"cursoAluno\": \"historia\"\r\n    },\r\n    {\r\n        \"nomeAluno\": \"Osmar Pinto\",\r\n        \"emailAluno\": \"opinto@email.com\",\r\n        \"cursoAluno\": \"historia\"\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "alunos/get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "?id",
+					"query": [
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/alunos/get?id=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"alunos",
+								"get"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nomeAluno\": \"Bruno da Silva\",\n    \"emailAluno\": \"bsilva@email.com\",\n    \"cursoAluno\": \"historia\"\n}"
+				},
+				{
+					"name": "2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/alunos/get?id=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"alunos",
+								"get"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nomeAluno\": \"Gislaine de Amaral\",\n    \"emailAluno\": \"gamaral@email.com\",\n    \"cursoAluno\": \"filosofia\"\n}"
+				}
+			]
+		},
+		{
+			"name": "cursos/register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/alunos/register",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"alunos",
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nomeCurso\": \"Psicologia\",\r\n    \"emailCoordenador\": \"psico@email.com\",\r\n    \"categoriaCurso\": \"graduacao\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/cursos/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cursos",
+								"register"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\r\n    \"message\": \"Curso registrado com sucesso\",\r\n    \"success\": true\r\n}"
+				}
+			]
+		},
+		{
+			"name": "cursos/get-all",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cursos/get-all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cursos",
+								"get-all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"nomeCurso\": \"Medicina\",\r\n        \"emailCoordenador\": \"medcurso@email.com\",\r\n        \"categoriaCurso\": \"graduacao\"\r\n    },\r\n    {\r\n        \"nomeCurso\": \"Especialização em Idade Média\",\r\n        \"emailCoordenador\": \"imespec@email.com\",\r\n        \"categoriaCurso\": \"mestrado\"\r\n    },\r\n    {\r\n        \"nomeCurso\": \"Sobre as verdades da vida\",\r\n        \"emailCoordenador\": \"verdadevida@email.com\",\r\n        \"categoriaCurso\": \"doutorado\"\r\n    },\r\n    {\r\n        \"nomeCurso\": \"Medicina veterinária\",\r\n        \"emailCoordenador\": \"medvet@email.com\",\r\n        \"categoriaCurso\": \"graduacao\"\r\n    },\r\n    {\r\n        \"nomeCurso\": \"Especialização em Neurologia\",\r\n        \"emailCoordenador\": \"neuro@email.com\",\r\n        \"categoriaCurso\": \"mestrado\"\r\n    },\r\n    {\r\n        \"nomeCurso\": \"Economia\",\r\n        \"emailCoordenador\": \"economia@email.com\",\r\n        \"categoriaCurso\": \"graduacao\"\r\n    }\r\n]"
+				}
+			]
+		},
+		{
+			"name": "cursos/get",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "?id",
+					"query": [
+						{
+							"key": "id",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cursos/get?id=1",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cursos",
+								"get"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nomeCurso\": \"Medicina\",\n    \"emailCoordenador\": \"medcurso@email.com\",\n    \"categoriaCurso\": \"graduacao\"\n}"
+				},
+				{
+					"name": "2",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/cursos/get?id=2",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"cursos",
+								"get"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"nomeCurso\": \"Especialização em Idade Média\",\n    \"emailCoordenador\": \"imespec@email.com\",\n    \"categoriaCurso\": \"mestrado\"\n}"
+				}
+			]
+		},
+		{
+			"name": "filmes/get-all",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "Default",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/filmes/get-all",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"filmes",
+								"get-all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "[\r\n    {\r\n        \"nomeFilme\": \"The Guard\",\r\n        \"anoLancamento\": \"2011\",\r\n        \"genero\": \"Comédia\",\r\n        \"diretor\": \"John Michael McDonagh\",\r\n        \"duracaoMinutos\": 96,\r\n        \"notaIMDb\": 7.3\r\n    },\r\n    {\r\n        \"nomeFilme\": \"Veronica Mars\",\r\n        \"anoLancamento\": \"2014\",\r\n        \"genero\": \"Crime\",\r\n        \"diretor\": \"Rob Thomas\",\r\n        \"duracaoMinutos\": 107,\r\n        \"notaIMDb\": 6.8\r\n    },\r\n    {\r\n        \"nomeFilme\": \"Robocop\",\r\n        \"anoLancamento\": \"2014\",\r\n        \"genero\": \"Ação\",\r\n        \"diretor\": \"José Padilha\",\r\n        \"duracaoMinutos\": 118,\r\n        \"notaIMDb\": 6.1\r\n    },\r\n    {\r\n        \"nomeFilme\": \"The Third Man\",\r\n        \"anoLancamento\": \"1949\",\r\n        \"genero\": \"Mistério\",\r\n        \"diretor\": \"Carol Reed\",\r\n        \"duracaoMinutos\": 104,\r\n        \"notaIMDb\": 8.1\r\n    },\r\n    {\r\n        \"nomeFilme\": \"Drive Me Crazy\",\r\n        \"anoLancamento\": \"1999\",\r\n        \"genero\": \"RomCom\",\r\n        \"diretor\": \"John Schultz\",\r\n        \"duracaoMinutos\": 91,\r\n        \"notaIMDb\": 7.0\r\n    },\r\n    {\r\n        \"nomeFilme\": \"House Party\",\r\n        \"anoLancamento\": \"2022\",\r\n        \"genero\": \"Comédia\",\r\n        \"diretor\": \"Calmatic\",\r\n        \"duracaoMinutos\": 100,\r\n        \"notaIMDb\": 5.9\r\n    }\r\n]"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://64d48e0f-6f35-40e1-a3a7-ee489030ebdb.mock.pstmn.io"
+		}
+	]
+}

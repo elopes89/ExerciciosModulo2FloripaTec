@@ -1,0 +1,55 @@
+<section style="display: flex; justify-content: space-around;">
+	<section style="border: 1px solid black;">
+		<h1>Exercício 6 Http</h1>
+		<br>
+		<div *ngIf="testeFilter.length > 0 ">
+		<button (click)="Avancar()">Avançar</button>
+		<button (click)="Voltar()">Voltar</button>
+			<p>{{auxPodium + 1}}°: {{this.testeFilter[auxPodium].nomeFilme}}</p>
+		</div>
+		<button (click)="times()">Obter Popular</button>
+		<button (click)="getFilmes()">listar</button>
+		<button (click)="addFilme()">ADD</button>
+		<button (click)="getPorId(porId)">ObterPorId</button>
+		<br>
+		<input [(ngModel)]="porId"
+			type="number">
+		<div *ngIf="this.mostrarOc">
+			<div *ngFor="let t of this.testeArray">
+				<div *ngIf="porId == t.id">
+					<p>
+						ID SELECIONADO SOLO: {{t.id}}
+					</p>
+				</div>
+				<p>
+					NomeFilme: {{t.nomeFilme}} Citações: {{t.ocorrencias}}
+					<button (click)="removeFilme(t.id)">Excluir</button>
+				</p>
+			</div>
+		</div>
+		<div *ngFor="let t of this.testeFilter">
+			<p>
+				NomeFilme: {{t.nomeFilme}} Citações: {{t.ocorrencias}}
+			</p>
+		</div>
+	</section>
+	<section style="width: 300px;">
+		<div *ngIf="carregado"
+			class="d-flex align-items-center">
+			<strong>Loading...</strong>
+			<div class="spinner-border ml-auto"
+				role="status"
+				aria-hidden="true"></div>
+		</div>
+	</section>
+
+
+
+
+
+
+
+
+
+
+</section>

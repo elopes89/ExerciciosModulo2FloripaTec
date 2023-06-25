@@ -30,20 +30,31 @@ export class NotificationListComponent implements OnInit {
     this.ns.add(this.notifObj).subscribe((nota) => {
       console.log(nota);
       this.notificacoes.push(nota);
-      console.log('notif: ' + this.notificacoes);
     });
   }
+
+  atualizar(e: number) {
+    this.notificacoes[e].lido = true;
+    const cNota: INot = {
+      id: this.notificacoes[e].id,
+      titulo: this.notificacoes[e].titulo,
+      subTitulo: this.notificacoes[e].subTitulo,
+      data: this.notificacoes[e].data,
+      lido: true,
+    };
+
+    this.ns.editLido(cNota).subscribe();
+  }
+  // Conferir(e: number): void {
+  //   this.notificacoes[e].lido = true;
+  //   this.notifObj.lido = this.notificacoes[e].lido;
+  // }
 
   removeNot(delId: number): void {
     this.ns.remove(this.notificacoes[delId].id).subscribe((nota) => {
       this.notifObj = nota;
       this.buscar();
     });
-  }
-
-  Conferir(e: number): void {
-    this.notificacoes[e].lido = true;
-    this.notifObj.lido = this.notificacoes[e].lido;
   }
   ngOnInit(): void {}
 }

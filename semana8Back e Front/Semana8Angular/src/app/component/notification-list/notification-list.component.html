@@ -24,11 +24,11 @@
 		</div>
 
 		<div *ngFor="let d of notificacoes index as i">
-			<ul class="list-group"  (click)="Conferir(i)">
+			<ul class="list-group"  (click)="atualizar(i)">
         <li class="list-group-item" [ngClass]="{visto: d.lido === true}">{{d.titulo}}</li>
 				<li class="list-group-item" [ngClass]="{visto: d.lido === true}">{{d.subTitulo}}</li>
         <li class="list-group-item" [ngClass]="{visto: d.lido === true}">{{d.data}}</li>
-        <li class="list-group-item" [ngClass]="{visto: d.lido === true}"> <button (click)="removeNot(i)" class="btn btn-primary">Excluir</button> </li>
+        <li class="list-group-item"><button (click)="removeNot(i)" class="btn btn-primary">Excluir</button> </li>
       </ul>
 		</div>
 	</div>

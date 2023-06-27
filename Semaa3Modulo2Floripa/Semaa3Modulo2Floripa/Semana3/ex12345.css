@@ -1,0 +1,9 @@
+.imc{
+    width: 60%;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    flex-direction: column;
+    background-color: aqua;
+}

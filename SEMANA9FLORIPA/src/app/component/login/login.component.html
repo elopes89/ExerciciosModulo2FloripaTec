@@ -1,0 +1,25 @@
+<!-- Descrição
+Editar
+Crie um componente com o nome "login" e adicione um formulário com apenas um
+ campo de e-mail e o botão submit,
+ utilize TD Forms ou reactive forms para verificar se o e-mail é válido.
+Se for válido, adicione uma ação no submit para salvar o e-mail em localStorage
+ com a instrução: localStorage.setItem('email', emailDigitado)
+após salvar, redirecione o usuário para a rota Home da aplicação. -->
+
+<app-header></app-header>
+<h1>LOGIN</h1>
+
+<form (ngSubmit)="enviar()" [formGroup]="emailForm" #formDir="ngForm" >
+
+<input type="text" formControlName="email" name="email"  required/>
+<div *ngIf="email.invalid && formDir.submitted">
+  <p *ngIf="email.errors?.['required']">O email é obrigatório!</p>
+  <p *ngIf="email.errors?.['email']">O email é incorreto!!!</p>
+</div>
+<button class="btn btn-success">Enviar</button>
+</form>
+
+<div *ngIf="">
+  <h1>Id: {{session.id}}</h1>
+</div>
